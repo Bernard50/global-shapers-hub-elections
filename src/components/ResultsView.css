@@ -1,0 +1,140 @@
+.results-view h2 {
+    margin-bottom: 0.25rem;
+}
+
+.results-view .subtitle {
+    color: var(--text-charcoal);
+    opacity: 0.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.role-results {
+    margin-bottom: var(--spacing-lg);
+}
+
+.role-results h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-navy);
+}
+
+.results-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.total-label {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-charcoal);
+}
+
+.result-row {
+    margin-bottom: 1.25rem;
+}
+
+.result-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary-navy);
+}
+
+.result-row-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.result-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+.result-photo-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-white);
+    border: 2px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.result-details {
+    flex: 1;
+}
+
+.progress-bg {
+    height: 12px;
+    background: var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 6px;
+    transition: width 1s ease-out;
+}
+
+.no-data {
+    font-style: italic;
+    color: var(--text-charcoal);
+    opacity: 0.5;
+}
+
+.admin-actions {
+    margin-top: var(--spacing-md);
+}
+
+@media print {
+
+    .admin-sidebar,
+    .admin-nav,
+    .admin-actions {
+        display: none !important;
+    }
+
+    .admin-content {
+        display: block !important;
+    }
+
+    .admin-main {
+        width: 100% !important;
+    }
+
+    body {
+        background: white;
+    }
+}
+
+@media (max-width: 600px) {
+    .result-row-content {
+        gap: 0.75rem;
+    }
+
+    .result-photo,
+    .result-photo-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+
+    .result-info {
+        font-size: 0.85rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+}

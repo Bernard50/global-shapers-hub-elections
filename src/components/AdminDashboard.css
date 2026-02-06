@@ -1,0 +1,253 @@
+.admin-dashboard {
+    background: var(--bg-white);
+    min-height: 100vh;
+}
+
+.admin-nav {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-white);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-info strong {
+    font-size: 1.25rem;
+    color: var(--primary-navy);
+}
+
+.admin-info span {
+    color: #7f8c8d;
+    margin-left: 0.5rem;
+}
+
+.admin-content {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+}
+
+.admin-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-sidebar button {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: none;
+    font-weight: 500;
+    color: var(--text-charcoal);
+}
+
+.admin-sidebar button.active {
+    background: var(--primary-navy);
+    color: white;
+}
+
+.admin-sidebar button:hover:not(.active) {
+    background: var(--bg-light);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.stat-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+}
+
+.candidate-form {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    background: var(--bg-light);
+}
+
+.candidate-form-main {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.photo-upload-section {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.candidate-photo-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.photo-placeholder {
+    width: 100px;
+    height: 100px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    border: 1px dashed var(--border-color);
+}
+
+.info-section {
+    flex: 1;
+}
+
+.candidate-form input,
+.candidate-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    color: var(--text-charcoal);
+    border-radius: 4px;
+}
+
+.voter-add {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.voter-add input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    color: var(--text-charcoal);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tag {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.tag.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.tag.used {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.btn-text {
+    background: none;
+    color: var(--accent-blue);
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 900px) {
+    .admin-content {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .admin-sidebar button {
+        white-space: nowrap;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .candidate-form-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-upload-section {
+        width: 100%;
+    }
+
+    .voter-add {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-nav .container {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .admin-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .admin-info span {
+        margin-left: 0;
+    }
+
+    .admin-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        white-space: nowrap;
+        font-size: 0.875rem;
+    }
+}
