@@ -6,10 +6,22 @@ import VoterLogin from './components/VoterLogin';
 import VotingUI from './components/VotingUI';
 import AdminAccess from './components/AdminAccess';
 import SuccessView from './components/SuccessView';
-import { supabase } from './services/supabase';
+import { supabase, isSupabaseConfigured } from './services/supabase';
 import './index.css';
 
 function App() {
+  if (!isSupabaseConfigured) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '2rem', textAlign: 'center', fontFamily: 'sans-serif' }}>
+        <h1 style={{ color: '#e74c3c' }}>Configuration Error 🛡️</h1>
+        <p>Your Supabase environment variables are missing or incorrect.</p>
+        <div style={{ background: '#f8f9fa', padding: '1rem', borderRadius: '8px', marginTop: '1rem', border: '1px solid #ddd' }}>
+          <strong>Action Required:</strong> Add <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> to your Vercel project settings.
+        </div>
+      </div>
+    );
+  }
+
   const [view, setView] = useState('landing');
   const [currentHub, setCurrentHub] = useState(null);
   const [voter, setVoter] = useState(null);
